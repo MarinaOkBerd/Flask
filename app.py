@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -6,17 +6,17 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index/')
 def index():
-    return 'Sopping'
+    return render_template('index.html')
 
 
-@app.route('/Shoes/')
+@app.route('/shoes')
 def shoes():
-    return 'Shoes'
+    return render_template('shoes.html')
 
 
-@app.route('/Clothes/')
+@app.route('/clothes')
 def clothes():
-    return 'Clothes'
+    return render_template('clothes.html')
 
 
 if __name__ == '__main__':
